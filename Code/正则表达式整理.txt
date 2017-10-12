@@ -1,0 +1,11 @@
+1、不包含中文的字符
+	var str = "fsaf国d4中2314fs";
+	if (!/[\u4e00-\u9fa5]/.test(str)) {
+		alert("不合法");
+		return false;
+	}
+	// 或者
+	if (/^[^\u4e00-\u9fa5]*$/.test(str)) {
+		alert("不合法");
+		return false;
+	}
