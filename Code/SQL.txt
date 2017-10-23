@@ -1,0 +1,8 @@
+1、Oracle查询某字段在哪些表中有
+	select t.table_name   
+	from user_tables t    
+	inner join  (  
+	  select TABLE_NAME    
+	  from user_tab_columns    
+	  where COLUMN_NAME='CNAME'  
+	) b on t.TABLE_NAME=b.TABLE_NAME;  
