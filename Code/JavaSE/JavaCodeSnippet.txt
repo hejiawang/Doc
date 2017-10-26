@@ -1,0 +1,6 @@
+1、加载classPath下的资源文件
+	ClassLoader classLoader = getClass().getClassLoader();
+	URL url = classLoader.getResource(fileName);
+	File file = new File(url.getFile());
+	
+	InputStream in = getClass().getClassLoader().getResourceAsStream(fileName); 
