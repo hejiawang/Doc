@@ -4,3 +4,21 @@
 	File file = new File(url.getFile());
 	
 	InputStream in = getClass().getClassLoader().getResourceAsStream(fileName); 
+	
+2、Spring容器初始化后执行
+	@Component
+	public class application implements ApplicationListener<ContextRefreshedEvent> { 
+
+		/**
+		 * spring容器初始化完成后构建监听事件
+		 * @param contextRefreshedEvent
+		 */
+		@Override
+		public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
+			//spring容器初始化完成后执行
+			if(contextRefreshedEvent.getApplicationContext().getParent() == null) {
+				//do somthing
+				
+			}
+		}
+	}
